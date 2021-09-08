@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: prometheus-msteams-config
-  namespace: default
+  namespace: monitoring
 data:
   connectors.yaml: |
     connectors:
@@ -13,7 +13,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: prometheus-msteams-card-template
-  namespace: default
+  namespace: monitoring
 data:
   card.tmpl: |
     {{ define "teams.card" }}
@@ -75,7 +75,7 @@ metadata:
     app: prometheus-msteams
     release: prometheus-msteams
   name: prometheus-msteams
-  namespace: default
+  namespace: monitoring
 spec:
   replicas: 1
   selector:
@@ -163,7 +163,7 @@ metadata:
     app: prometheus-msteams
     release: prometheus-msteams
   name: prometheus-msteams
-  namespace: default
+  namespace: monitoring
 spec:
   ports:
   - port: 2000
